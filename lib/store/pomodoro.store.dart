@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'dart:async';
 
 import 'package:mobx/mobx.dart';
@@ -22,17 +24,17 @@ abstract class _PomodoroStore with Store {
   int tempoTrabalho = 2;
 
   @observable
-  int tempoDescanso = 2;
+  int tempoDescanso = 1;
 
   @observable
-  TipoIntervalo tipoIntervalo = TipoIntervalo.DESCANSO;
+  TipoIntervalo tipoIntervalo = TipoIntervalo.TRABALHO;
 
   Timer? cronometro;
 
   @action
   void iniciar() {
     iniciado = true;
-    cronometro = Timer.periodic(Duration(seconds: 50), (timer) {
+    cronometro = Timer.periodic(const Duration(seconds: 50), (timer) {
       if (minutos == 0 && segundos == 0) {
         _trocarTipoIntervalo();
       } else if (segundos == 0) {
@@ -69,10 +71,9 @@ abstract class _PomodoroStore with Store {
   void decrementarTempoTrabalho() {
     if (tempoTrabalho > 1) {
       tempoTrabalho--;
-    }
-
-    if (estaTrabalhando()) {
-      reiniciar();
+      if (estaTrabalhando()) {
+        reiniciar();
+      }
     }
   }
 
@@ -88,10 +89,9 @@ abstract class _PomodoroStore with Store {
   void decrementarTempoDescanso() {
     if (tempoDescanso > 1) {
       tempoDescanso--;
-    }
-
-    if (estaDescansando()) {
-      reiniciar();
+      if (estaDescansando()) {
+        reiniciar();
+      }
     }
   }
 
