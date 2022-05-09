@@ -1,16 +1,21 @@
-# contador_pomodoro
+# Contador Pomodoro
 
-A new Flutter project.
 
-## Getting Started
+Contador Pomodoro é um aplicativo desenvolvido utilizando o Flutter e o MobX para realizar a tarefa do contador Pomodoro
 
-This project is a starting point for a Flutter application.
+O aplicativo foi desenvolvido para controlar o tempo de descanso e o tempo de trabalho utilizando a técnica Pomodoro
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Instalação
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Para instalação primeiramente clone o repositório local, em seguida abra o diretório salvo e instale as dependências
+
+```sh
+git clone https://github.com/RToramaru/contador-pomodoro
+cd contador-pomodoro-app
+flutter pub get
+```
+
+## Desenvolvedor
+
+Rafael Almeida Soares https://github.com/RToramaru
