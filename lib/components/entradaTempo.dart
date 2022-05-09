@@ -1,21 +1,22 @@
 // ignore_for_file: file_names
 
+import 'package:contador_pomodoro/store/pomodoro.store.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../store/pomodoro.store.dart';
+
 
 class EntradaTempo extends StatelessWidget {
   final String titulo;
   final int valor;
-  final void Function()? inc;
-  final void Function()? dec;
+  final void Function()? incremento;
+  final void Function()? decremento;
 
   const EntradaTempo({
     Key? key,
     required this.titulo,
     required this.valor,
-    this.inc,
-    this.dec,
+    this.incremento,
+    this.decremento,
   }) : super(key: key);
 
   @override
@@ -36,7 +37,7 @@ class EntradaTempo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: dec,
+              onPressed: decremento,
               child: const Icon(
                 Icons.arrow_downward,
                 color: Colors.white,
@@ -54,7 +55,7 @@ class EntradaTempo extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: inc,
+              onPressed: incremento,
               child: const Icon(
                 Icons.arrow_upward,
                 color: Colors.white,
